@@ -28,6 +28,8 @@ function startGame() {
     document.querySelector('#xBtn').style.display = 'inline';
     document.querySelector('#oBtn').style.display = 'inline';
     document.querySelector('#or').style.display = 'inline';
+    document.querySelector('footer').style.display = 'none';
+
 
     document.querySelector('#level').style.display = 'flex';
 
@@ -243,6 +245,7 @@ function loadBoard() {
     document.querySelector('#xBtn').style.display = 'none';
     document.querySelector('#oBtn').style.display = 'none';
     document.querySelector('#or').style.display = 'none';
+    document.querySelector('footer').style.display = 'flex';
 
     document.querySelector('#level').style.display = 'none';
 
@@ -259,6 +262,15 @@ function loadBoard() {
     }
 
     changeMsg('You Play now...');
+}
+
+function onEasyClick(){
+    document.querySelector('#easyRadio').checked = true;
+}
+
+
+function onHardClick(){
+    document.querySelector('#hardRadio').checked = true;
 }
 
 function onSqClick(evt) {
