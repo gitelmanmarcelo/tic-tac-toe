@@ -27,14 +27,10 @@ function startGame() {
     changeMsg('Choose your team:');
     document.querySelector('#xBtn').style.display = 'inline';
     document.querySelector('#oBtn').style.display = 'inline';
+    document.querySelector('#or').style.display = 'inline';
 
     document.querySelector('#level').style.display = 'flex';
 
-    
-    // document.querySelectorAll('label')[0].style.display = 'inline';
-    // document.querySelectorAll('input')[0].style.display = 'inline';
-    // document.querySelectorAll('label')[1].style.display = 'inline';
-    // document.querySelectorAll('input')[1].style.display = 'inline';
 
     document.querySelector('#board').style.display = 'none';
 
@@ -246,14 +242,9 @@ function compPlayHard() {
 function loadBoard() {
     document.querySelector('#xBtn').style.display = 'none';
     document.querySelector('#oBtn').style.display = 'none';
+    document.querySelector('#or').style.display = 'none';
 
     document.querySelector('#level').style.display = 'none';
-
-
-    // document.querySelectorAll('label')[0].style.display = 'none';
-    // document.querySelectorAll('input')[0].style.display = 'none';
-    // document.querySelectorAll('label')[1].style.display = 'none';
-    // document.querySelectorAll('input')[1].style.display = 'none';
 
     document.querySelector('#board').style.display = 'grid';
 
