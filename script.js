@@ -69,8 +69,16 @@ function compPlayEasy() {
 }
 
 function compPlayHard() {
-    // FIRST TRY THE MIDDLE SQUARE
-    if (boardStatus[4] == 'E')
+    // IF THE USER GOES TO A CORNER COVER THE OPPOSITE ELSE TRY THE MIDDLE SQUARE
+    if (boardStatus[0] == user && boardStatus[8] == 'E')
+        return 8;
+    else if (boardStatus[8] == user && boardStatus[0] == 'E')
+        return 0;
+    else if (boardStatus[2] == user && boardStatus[6] == 'E')
+        return 6;
+    else if (boardStatus[6] == user && boardStatus[2] == 'E')
+        return 2;
+    else if (boardStatus[4] == 'E')
         return 4;
     // IF THERE IS AN OPPORTUNITY TO WIN, GO FOR IT
     // CHECK HORIZONTALS
