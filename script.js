@@ -69,17 +69,7 @@ function compPlayEasy() {
 }
 
 function compPlayHard() {
-    // IF THE USER GOES TO A CORNER COVER THE OPPOSITE ELSE TRY THE MIDDLE SQUARE
-    if (boardStatus[0] == user && boardStatus[8] == 'E')
-        return 8;
-    else if (boardStatus[8] == user && boardStatus[0] == 'E')
-        return 0;
-    else if (boardStatus[2] == user && boardStatus[6] == 'E')
-        return 6;
-    else if (boardStatus[6] == user && boardStatus[2] == 'E')
-        return 2;
-    else if (boardStatus[4] == 'E')
-        return 4;
+
     // IF THERE IS AN OPPORTUNITY TO WIN, GO FOR IT
     // CHECK HORIZONTALS
     let boardStr = boardStatus.map( el=> { return el===computer ? '*' : el}).join('');
@@ -233,6 +223,38 @@ function compPlayHard() {
         case '##E':
             return 6;
         }
+    if (boardStatus[4] == 'E')
+        return 4;
+    // IF THE USER IS IN TWO OPPOSITE CORNERS GO TO AN ADJACENT SQUARE
+    if (boardStatus[0] == user && boardStatus[8] == user) {
+        if (boardStatus[1] == 'E')
+            return 1;
+        else if (boardStatus[3] == 'E')
+            return 3;
+        else if (boardStatus[5] == 'E')
+            return 5;
+        else if (boardStatus[7] == 'E')
+            return 7;
+    }
+    else if (boardStatus[2] == user && boardStatus[6] == user) {
+        if (boardStatus[1] == 'E')
+            return 1;
+        else if (boardStatus[5] == 'E')
+            return 5;
+        else if (boardStatus[3] == 'E')
+            return 3;
+        else if (boardStatus[7] == 'E')
+            return 7;
+    }
+    // IF THE USER GOES TO A CORNER COVER THE OPPOSITE ELSE TRY THE MIDDLE SQUARE
+    if (boardStatus[0] == user && boardStatus[8] == 'E')
+        return 8;
+    else if (boardStatus[8] == user && boardStatus[0] == 'E')
+        return 0;
+    else if (boardStatus[2] == user && boardStatus[6] == 'E')
+        return 6;
+    else if (boardStatus[6] == user && boardStatus[2] == 'E')
+        return 2;
 
     // NO RISKS OR OPPORTUNITIES, TRY THE CORNERS
     if (boardStatus[0] == 'E')
