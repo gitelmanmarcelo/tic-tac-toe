@@ -121,7 +121,10 @@ footer {
     width: 8rem;
     height: 3rem;
     font-size: 1rem;
-    background-color: grey;
+    background-color: brown;
+    color: white;
+    margin-top: 5vh;
+    border: none;
 }
 
 @media screen  and (max-width: 660px) {
